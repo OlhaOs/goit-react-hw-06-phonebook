@@ -1,0 +1,6 @@
+.sectionMain {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: rgb(6, 127, 167);
+}

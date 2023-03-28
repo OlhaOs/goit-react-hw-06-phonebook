@@ -5,14 +5,14 @@ import Container from './Container/Container';
 
 export default class App extends React.Component {
   state = {
-    contacts: ['Freddie Mercury', 'Homer Simpson', 'Nikola Tesla'],
+    contacts: [],
     name: '',
   };
 
-  getNewContact = data => {
+  getNewContact = newContact => {
     this.setState(prevState => {
       return {
-        contacts: [...prevState.contacts, data],
+        contacts: [...prevState.contacts, newContact],
       };
     });
   };

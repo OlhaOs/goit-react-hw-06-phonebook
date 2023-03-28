@@ -4,22 +4,26 @@ import React from 'react';
 
 export default class Form extends React.Component {
   state = {
-    data: '',
+    name: '',
+    id: '',
   };
   nameInputId = nanoid();
 
   handleInputChange = event => {
-    this.setState({ [event.currentTarget.name]: event.currentTarget.value });
-  };
+    this.setState({
+      [event.currentTarget.name]: event.currentTarget.value,
+      id: event.currentTarget.id,
+    });
+     };
 
   handleSubmit = event => {
     event.preventDefault();
-    this.props.onSubmitButton(this.state.data);
+    this.props.onSubmitButton(this.state);
     this.reset();
   };
 
   reset = () => {
-    this.setState({ data: '' });
+    this.setState({ name: '' });
   };
 
   render() {
@@ -31,9 +35,9 @@ export default class Form extends React.Component {
             Name
           </label>
           <input
-            id={this.nameInputId}
+            id={nanoid()}
             type="text"
-            name="data"
+            name="name"
             pattern="^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$"
             title="Name may contain only letters, apostrophe, dash and spaces. For example Adrian, Jacob Mercer, Charles de Batz de Castelmore d'Artagnan"
             required

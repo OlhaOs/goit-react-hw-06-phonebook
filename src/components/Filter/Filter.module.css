@@ -1,0 +1,22 @@
+.search {
+  display: flex;
+
+  width: 200px;
+  height: 30px;
+
+  margin-top: 10px;
+  margin-bottom: 10px;
+  padding: 0 10px;
+
+  border-radius: 4px;
+  outline: none;
+  border: 2px solid lightblue;
+  color: rgb(6, 127, 167);
+  background-color: azure;
+}
+input:focus,
+input:hover,
+.btn:hover {
+  border: 2px solid rgb(121, 198, 224);
+  color: rgb(6, 127, 167);
+}

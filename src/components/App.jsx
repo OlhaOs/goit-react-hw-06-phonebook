@@ -50,16 +50,10 @@ export default class App extends React.Component {
     return (
       <Container>
         <h2>Phonebook</h2>
-        <Form onSubmitButton={this.checkContact}></Form>
+        <Form onSubmitButton={this.checkContact} />
         <h3>Contacts</h3>
-        <Filter
-          value={this.state.filter}
-          onSearch={this.handleFilterChange}
-        ></Filter>
-        <ContactList
-          data={filtredData}
-          onDelete={this.deleteContact}
-        ></ContactList>
+        <Filter value={this.state.filter} onSearch={this.handleFilterChange} />
+        <ContactList data={filtredData} onDelete={this.deleteContact} />
       </Container>
     );
   }
